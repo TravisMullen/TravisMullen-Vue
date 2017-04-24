@@ -1,0 +1,66 @@
+// this SCSS file is to be referenced by external compoments
+@import 'settings'; // local config
+@import './node_modules/angular-base-apps/scss/base'; // ref to global
+// =============================================================================
+// color classes :: base
+// =============================================================================
+
+// do not code hex values here, 
+// pull color vars from `setting.scss`
+$base-color-classes: ( 
+  "white": $white,
+  "black": $black,
+  "primary-color": $primary-color,
+  "secondary-color": $secondary-color,
+  "success-color": $success-color,
+  "alert-color": $alert-color,
+  "info-color": $info-color,
+  "warning-color": $warning-color,
+  "gray": $gray,
+  "success-dark": $success-dark,
+  "alert-dark": $alert-dark,
+  "warning-dark": $warning-dark,
+
+  "anchor-font-color": $anchor-font-color
+);
+
+// /* basic foreground colors :: `.color-name` */
+
+// @each $color, $value in $base-color-classes {
+//     .#{$color} {
+//         color: $value !important;
+//     }
+// }
+
+// /* basic background colors :: `.bg-color-name` */
+
+// @each $color, $value in $base-color-classes {
+//     .#{$color}-bg {
+//         background-color: $value !important;
+//     }
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+li,
+label,
+span,
+a,
+sup,
+sub,
+small,
+th,
+td,
+address {
+    // help smooth out `font-smoothing: antialiased`
+    text-shadow: rem-calc(1) rem-calc(1) rem-calc(1) rgba(0, 0, 0, 0.004);
+}
+
