@@ -1,0 +1,7 @@
+{
+  "title": "Travis Mullen | Software Engineer.",
+  "info": "<h1>I'm a full stack <em>software engineer</em>.</h1> My focus is building <strong>progressive web applications</strong> (PWAs) and <strong>decentralized applications</strong> (DApps). I love <strong>Vue.js</strong> and hope to never use Angular again. My platform of choice is <strong>Ethereum</strong>, but if you ask nicely I can deploy projects onto a centralized server.<br> I also develop tools to manage and automate nodes on various <strong>blockchain platforms</strong>, and write <strong>smart contracts</strong> using solidity. I can talk about <strong>cryptocurrency</strong> and brewing beer for hours at a time.<br> I almost forget to mention <strong>Bitcoin</strong>.",
+  "keywords": "software engineer, javascript, nodejs, blockchain, dapps, pwa, web applications, es6, ethereum, smart contracts",
+  "description": "Developer of web applications using modern JavaScript and smart contracts using Solidity.",
+  "noscript": "Sorry but this application doesn't work properly without JavaScript enabled. Please enable it to continue."
+}
