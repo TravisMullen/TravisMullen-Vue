@@ -54,10 +54,10 @@ export default {
   // font-size: 4vw;
   color: $body-font-color;
 
-  filter: drop-shadow(rem-calc(1) rem-calc(2) rem-calc(2) rgba(0, 0, 0, 0.3));
-  &:hover {
-    filter: drop-shadow(rem-calc(1) rem-calc(2) rem-calc(2) rgba(0, 0, 0, 0.4));
-  }
+  // filter: drop-shadow(rem-calc(1) rem-calc(2) rem-calc(2) rgba(0, 0, 0, 0.3));
+  // &:hover {
+  //   filter: drop-shadow(rem-calc(1) rem-calc(2) rem-calc(2) rgba(0, 0, 0, 0.4));
+  // }
 }
 
 h1 {

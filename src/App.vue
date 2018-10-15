@@ -1,39 +1,29 @@
 <!-- App view -->
 <template lang="pug">
-#app.grid-frame.vertical
-  section.grid-block.align-left
-    .grid-block.small-2.medium-3
-      page-header.grid-content.noscroll
-    .grid-block.medium-9.align-left
-      transition(
-        name='slide-fade'
-      )
-        router-view.grid-content.stage
-  page-footer.grid-block.shrink.align-center
+#app.grid-frame
+  .grid-block.expanded
+    .grid-content(
+      @click="isActive = !isActive" 
+    )
+      p(style='height: 800px') Some body content {{isActive}}
+  .grid-block.shrink(
+    :class="{ close: isActive }"
+  )
+    .grid-content
+      .fill
+        p hello world
 </template>
 
 <!-- App Ctrl -->
 <script>
 
-import pageHeader from './components/Header'
-import pageFooter from './components/Footer'
-
 export default {
   name: 'app',
   data () {
     return {
-      transitionName: 'slide-left'
+      hello: 'world',
+      isActive: false
     }
-  },
-  beforeRouteUpdate (to, from, next) {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-    next()
-  },
-  components: {
-    pageHeader,
-    pageFooter
   }
 
 }
@@ -48,30 +38,25 @@ export default {
 @import 'styles/svg-icon';
 
 #app {
-  border-top: rem-calc(3) solid $primary-color;
-  // font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  // text-align: center;
-  // color: #2c3e50;
-}
-
-$animation-duration-default: 0.3s !default;
-// /* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all $animation-duration-default linear .5s;
-}
-.slide-fade-leave-active {
-  transition: all $animation-duration-default linear;
-}
-.slide-fade-enter
-/* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateY(100%);
-}
-.slide-fade-leave-to {
-  opacity: 0;
-  overflow: hidden;
-
-  transform: translateY(-80%);
+  .grid-block {
+    &.shrink {
+      transition: all .5s ease;
+      .grid-content {
+        // display: none;
+        // position: relative;
+        // position: relative;
+        transform: translateX(0)
+      }
+      &.close {
+        .grid-content {
+          // display: none;
+          // position: relative;
+          // position: absolute;
+          transform: translateX(-100%)
+        }
+      }
+    }
+  }
 }
 
 </style>
