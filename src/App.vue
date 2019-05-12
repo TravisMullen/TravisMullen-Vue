@@ -1,67 +1,100 @@
-<!-- App view -->
 <template lang="pug">
-#app.grid-frame.vertical
-  section.grid-block.align-left
-    .grid-block.small-2.medium-3
-      page-header.grid-content.noscroll
-    .grid-block.medium-9.align-left
-      transition(
-        name='slide-fade'
+#app
+  .grid-y.grid-frame
+    .cell.shrink.cell-block-container.bg-color-primary.border-bottom
+      //- p header area
+    .cell.auto.cell-block-container
+      .wrapper.cell.auto.grid-x.grid-padding-x.align-stretch(
+        :class="view"
       )
-        router-view.grid-content.stage
-  page-footer.grid-block.shrink.align-center
+        .header.cell.shrink.small-2.medium-4
+          page-header
+        .main.cell.auto.cell-block-y(
+          ref='scroller'
+        )
+          .cell.auto.medium-10.large-8
+            transition(
+              name='slide-fade'
+            )
+              router-view
+    .footer.cell.shrink.border-top
+      page-footer
 </template>
 
-<!-- App Ctrl -->
 <script>
 
 import pageHeader from './components/Header'
 import pageFooter from './components/Footer'
+import Trigger from './components/Trigger'
 
 export default {
   name: 'app',
-  data () {
-    return {
-      transitionName: 'slide-left'
+  computed: {
+    view () {
+      return this.$route.name
     }
-  },
-  beforeRouteUpdate (to, from, next) {
-    const toDepth = to.path.split('/').length
-    const fromDepth = from.path.split('/').length
-    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-    next()
   },
   components: {
     pageHeader,
-    pageFooter
+    pageFooter,
+    Trigger
   }
 
 }
 
 </script>
 
-<!-- App syles -->
 <style lang="scss">
+
 // do NOT add `scoped` to this <style> !!
 // call `globals` to define the base styles globally
-@import 'styles/globals';
-@import 'styles/svg-icon';
+@import 'styles/base';
 
-#app {
-  border-top: rem-calc(3) solid $primary-color;
-  // font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  // text-align: center;
-  // color: #2c3e50;
+.bg-color-primary {
+  background-color: $primary-color;
+}
+
+.border-top {
+  border-top: 1px solid $secondary-color;
+}
+.border-bottom {
+  border-bottom: rem-calc(4) solid $primary-color;
+}
+.main {
+  padding-top: $global-padding;
+}
+.header {
+  z-index: z('site-header');
+  padding-top: $global-padding;
+}
+.footer {
+  z-index: z('site-footer');
+  background-color: $body-background;
 }
 
 $animation-duration-default: 0.3s !default;
-// /* Enter and leave animations can use different */
+
+.main,
+.header {
+  transition: padding $animation-duration-default ease;
+  .home & {
+    padding-top: 10vh;
+    @include breakpoint(medium) {
+      padding-top: 15vh;
+    }
+    @include breakpoint(large) {
+      padding-top: 25vh;
+    }
+  }
+}
+
+/* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all $animation-duration-default linear .5s;
+  transition: all $animation-duration-default linear $animation-duration-default*2;
 }
 .slide-fade-leave-active {
-  transition: all $animation-duration-default linear;
+  transition: all $animation-duration-default linear $animation-duration-default;
 }
 .slide-fade-enter
 /* .slide-fade-leave-active for <2.1.8 */ {

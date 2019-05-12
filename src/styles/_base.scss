@@ -1,0 +1,66 @@
+
+@import "namespace";
+#{$namespace} {
+  --style-system: #{$namespace};  
+}
+
+@import './node_modules/foundation-sites/scss/foundation';
+@import 'helpers/svg-icon';
+
+// @include normalize;
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 780px,
+  xlarge: 1024px,
+  xxlarge: 1200px,
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small medium large);
+
+// 3. The Grid
+// -----------
+
+$global-width: rem-calc(1200);
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+  small: 0.7rem,
+  medium: 1rem,
+);
+$grid-column-align-edge: true;
+$grid-column-alias: 'columns';
+$block-grid-max: 8;
+
+
+$global-flexbox: true;
+
+@include foundation-global-styles;
+
+@include foundation-xy-grid-classes(
+  // /* options
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true,
+  $offset: true,
+  $vertical-grid: true,
+  $frame-grid: true
+);
+
+@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+
+@include foundation-button;
+
+@include foundation-typography;
+
+
+@include svg-icon;

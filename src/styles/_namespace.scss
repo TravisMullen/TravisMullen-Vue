@@ -1,0 +1,28 @@
+
+
+// /** 
+//  * Design System Prefix.
+//  *
+//  * For use as namespace to implement style encapsulation (by class),
+//  * and target custom elements.
+//  */
+
+// /** 
+//  * Prefix as class name
+//  */
+// /* .#{$prefix} { ... } */
+
+// /** 
+//  * or using SCSS variable 'namespace'
+//  */
+// /* .#{$namespace} { ... } */
+
+// /** 
+//  * Custom element targeting rule with prefix
+//  */
+// /* #{$prefix}-custom-element-name { ... } */
+
+
+
+$namespace: 'travis-mullen-brochure';
+$prefix: 'travis-mullen-brochure';

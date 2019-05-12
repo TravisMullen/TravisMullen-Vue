@@ -1,10 +1,11 @@
 const meta = require('./src/assets/metadata.json')
 
 module.exports = {
-   pwa: {
+  productionSourceMap: false,
+  pwa: {
     name: meta.title, // Default: "name" field in package.json
     themeColor: '#2173a6',
-    msTileColor: '#000000',
+    msTileColor: '#000000'
     // appleMobileWebAppCapable: 'yes',
     // appleMobileWebAppStatusBarStyle: 'black',
 
@@ -38,16 +39,16 @@ module.exports = {
     // add replacement loader(s)
     svgRule
       .use('vue-svg-loader')
-        .loader('vue-svg-loader')
-        .options({
-          svgo: {
-            plugins: [
-              {removeViewBox: false},
-              {removeDimensions: true},
-              {removeDoctype: true},
-              {removeComments: true}
-            ]
-          }
-        })
+      .loader('vue-svg-loader')
+      .options({
+        svgo: {
+          plugins: [
+            { removeViewBox: false },
+            { removeDimensions: true },
+            { removeDoctype: true },
+            { removeComments: true }
+          ]
+        }
+      })
   }
 }
