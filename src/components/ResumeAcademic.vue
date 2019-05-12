@@ -1,12 +1,8 @@
 <template lang="pug">
-transition-group.no-bullet(
-  name='slide-fade',
-  tag='ul',
-  v-once=''
-)
+ul.no-bullet
   li(
-    v-for='(item, index) in items',
-    v-bind:key='item.title'
+    v-for='item in items',
+    :key='item.title'
   )
     strong {{ item.title }}
     span(v-html='item.subtitle')
@@ -41,13 +37,13 @@ li {
 }
 .slide-fade-enter
 /* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
 .slide-fade-leave-to {
   opacity: 0;
   overflow: hidden;
 
-  transform: translateX(-80%);
+  transform: translateY(-80%);
 }
 
 </style>

@@ -1,0 +1,52 @@
+// 
+// to be used inside button.scss
+//
+
+@mixin svg-icon() {
+  .svg-icon {
+    &.prefix {
+      margin-right: $global-padding;
+    }
+    &.postfix {
+      margin-left: $global-padding;
+    }
+
+    display: inline-flex;
+    align-self: center;
+    position: relative;
+
+    height: 1rem;
+    width: 1rem;
+    
+    svg,
+    img {
+      height: 1rem;
+      width: 1rem;
+    }
+    &.svg-baseline {
+      svg,
+      img {
+      // bottom: -(1rem/8);
+        position: absolute;
+      }
+    }
+    .button & {
+      fill: $white;
+    }
+    small & {
+
+      &.prefix {
+        margin-right: $global-padding/3;
+      }
+      &.postfix {
+        margin-left: $global-padding/3;
+      }
+      svg,
+      img {
+        padding-top: 1px;
+        height: $small-font-size;
+        width: $small-font-size;
+      }
+    }
+  }
+}

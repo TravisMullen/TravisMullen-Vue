@@ -1,5 +1,5 @@
 <template lang="pug">
-.not-found(v-once='')
+.not-found-view(v-once='')
   h1
     | {{msg}}
   pied-piper-alt
@@ -22,15 +22,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-h1 {
-  margin-top: 3rem;
-}
-
-pied-piper-alt {
-  display: block;
-  svg {
-    margin: 3rem;
+.not-found-view {
+  text-align: center;
+  h1 {
+    margin-top: 3rem;
+  }
+  pied-piper-alt {
+    display: block;
+    svg {
+      margin: 3rem;
+    }
   }
 }
 </style>

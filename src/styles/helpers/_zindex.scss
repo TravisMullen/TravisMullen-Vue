@@ -1,0 +1,43 @@
+
+// z($x,$y, $pseudo)
+//
+// Introduce some sanity to z-index usage by declaring a set layer map.
+//
+// Compatible in IE9+, Firefox 2+, Safari 4+, Chrome 4+
+//
+// $name - Name of layer to be reference throughout SCSS files.
+//
+// Styleguide helpers.functions.zindex
+
+$z-indexes: (
+    "modal",
+    "drop-down",
+    "mask",
+    "header",
+    "visualization-controls",
+    "visualization-container",
+    "page-container",
+) !default;
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+// will be overridden
+// => confirm definitions in _settings.scss
+// $z-indexes: (
+//     "outdated-browser",
+//     "modal",
+//     "site-header",
+//     "page-wrapper",
+//     "site-footer",
+//     "drop-down"
+// ) !default; // override in _settings.scss
+// Then where ever you're wanting to use a z-index value, name it the same as your class and add in it into your variables/setting file, like below. You'll never have a "z-index: 99999999;" headache again.
+// .site-header {
+//     z-index: z('site-header');
+// }

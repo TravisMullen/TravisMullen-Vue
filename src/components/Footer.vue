@@ -1,10 +1,10 @@
 <template lang="pug">
-.footer.wrap(v-once='')
-  .grid-block.small-12.medium-6.noscroll.copyright
-    small.grid-content.noscroll(v-html='copyright')
-  .grid-block.small-12.medium-6.noscroll.contact.end.medium-text-right
-    small.grid-content.noscroll
-      a.hover-shadow(
+.footer.grid-x.grid-padding-x.align-center(v-once='')
+  .cell.small-6.copyright
+    small(v-html='copyright')
+  .cell.small-6.contact.text-right
+    small
+      a(
         :href='mailto',
         title='mail'
       )
@@ -85,34 +85,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between;
-  align-items: center;
-  padding: $global-padding/2 $global-padding;
-  border-top: rem-calc(1) solid $body-font-color;
+// .footer {
+//   display: flex;
+//   justify-content: space-between;
+//   align-content: space-between;
+//   align-items: center;
+//   padding: $global-padding/2 $global-padding;
+//   border-top: rem-calc(1) solid $body-font-color;
   svg {
-    fill: $anchor-font-color;
+    fill: $anchor-color;
   }
 
-  .grid-content {
-    padding-left: 0;
-    padding-right: 0;
-  }
+//   .grid-content {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
 
-  @include breakpoint(small only) {
-    .contact {
-      margin-top: $global-padding/4;
-    }
-  }
-}
+//   @include breakpoint(small only) {
+//     .contact {
+//       margin-top: $global-padding/4;
+//     }
+//   }
+// }
 
 small {
-  font-weight: normal;
+  font-weight: bold;
 }
 
-.hover-shadow {
-  @include hovershadow;
-}
 </style>

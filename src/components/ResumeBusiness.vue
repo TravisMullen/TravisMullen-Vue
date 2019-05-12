@@ -1,31 +1,28 @@
 <template lang="pug">
-transition-group.no-bullet.business-items(tag='ul',v-once='')
+ul.no-bullet
   li(
-    v-for='(item, index) in items',
-    v-bind:key='item.company'
+    v-for='item in items',
+    :key='item.title'
   )
     em(v-html='item.title')
     br
-    |
-    strong(v-html='item.company') The University of the Arts
-    |  (
     a(
       v-bind:href='item.url',
       target='_blank',
       :title='item.company'
     )
-      | {{item.shortUrl}}&nbsp;
-      .svg-icon
-        chain-icon
-    | &nbsp;)
+      strong(v-html='item.company')
+    |&nbsp;|&nbsp;
     strong.location {{item.location}}
     br
-    span(v-html='item.desc')
+    span(v-html='description(item.desc)')
     br
     span.info-color(
       v-if='item.tech',
       v-html='item.tech'
     )
+  h6
+    em There is additional work and clients, but it's too old to be relevant...
 </template>
 
 <script>
@@ -39,6 +36,21 @@ export default {
   },
   data () {
     return json
+  },
+  methods: {
+    // this could be done more gracefully, prob as another component
+    description (content) {
+      if (Array.isArray(content)) {
+        const list = ['<ul>']
+        for (const item of content) {
+          list.push(`<li>${item}</li>`)
+        }
+        list.push('</ul>')
+        return list.join('')
+      } else {
+        return content
+      }
+    }
   }
 }
 </script>
@@ -53,7 +65,7 @@ export default {
       svg {
         height: $small-font-size;
         width: $small-font-size;
-        fill: $anchor-font-color;
+        fill: $anchor-color;
       }
     }
   }
@@ -63,6 +75,9 @@ export default {
   .info-color,
   .location {
     font-size: $small-font-size;
+  }
+  .location {
+    white-space: nowrap;
   }
   li {
     padding-bottom: $global-padding*2;

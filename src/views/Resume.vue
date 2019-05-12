@@ -1,6 +1,6 @@
 <template lang="pug">
 .resume(v-once='')
-  article.wrapper
+  article
     h2 {{academic}}
     academic
     h2 {{business}}
@@ -26,22 +26,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .resume {
-    display: block;
-    width: 100%;
-    padding-top: $global-padding*2;
-    padding-left: $global-padding*2;
-    .wrapper {
-      max-width: rem-calc(600);
-    }
-    h2 {
-      height: $global-padding*5;
-      margin-top: rem-calc(8);
-      margin-bottom: rem-calc(15);
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  }
-</style>
