@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/_settings.scss';
+
 $animation-duration-default: 0.3s !default;
 .home-view {
 

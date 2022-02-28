@@ -56,7 +56,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_settings.scss';
   .business-items {
     .svg-icon {
       top: 0.125em;

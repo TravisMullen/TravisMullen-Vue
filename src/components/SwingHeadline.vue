@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles/_settings.scss';
 // intended to play nice with foundation-sites (settings.scss)
 // or design system with similar naming conventions.
 

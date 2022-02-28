@@ -50,7 +50,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'styles/_settings.scss';
 // do NOT add `scoped` to this <style> !!
 // call `globals` to define the base styles globally
 @import 'styles/base';

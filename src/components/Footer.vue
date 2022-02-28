@@ -84,7 +84,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import '../styles/_settings.scss';
 // .footer {
 //   display: flex;
 //   justify-content: space-between;
