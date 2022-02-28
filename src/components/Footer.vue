@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import PaperPlaneIcon from '@/assets/svg/paper-plane.svg'
+import PaperPlaneIcon from '../assets/svg/paper-plane.svg?component'
 
 function toRoman (num) {
   let result = ''
@@ -84,13 +84,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
+@import '../styles/_settings.scss';
 // .footer {
 //   display: flex;
 //   justify-content: space-between;
 //   align-content: space-between;
 //   align-items: center;
-//   padding: $global-padding/2 $global-padding;
+//   padding: $global-padding*0.5 $global-padding;
 //   border-top: rem-calc(1) solid $body-font-color;
   svg {
     fill: $anchor-color;

@@ -11,7 +11,7 @@ ul.no-bullet
 </template>
 
 <script>
-import json from '@/assets/academic.json'
+import json from '../assets/academic.json'
 
 export default {
   name: 'academic',
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import '../styles/_settings.scss';
 li {
   padding-bottom: $global-padding*2;
 }

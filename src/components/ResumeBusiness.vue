@@ -26,8 +26,8 @@ ul.no-bullet
 </template>
 
 <script>
-import ChainIcon from '@/assets/svg/chain.svg'
-import json from '@/assets//business.json'
+import ChainIcon from '../assets/svg/chain.svg?component'
+import json from '../assets//business.json'
 
 export default {
   name: 'business',
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import '../styles/_settings.scss';
   .business-items {
     .svg-icon {
       top: 0.125em;

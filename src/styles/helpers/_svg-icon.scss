@@ -36,10 +36,10 @@
     small & {
 
       &.prefix {
-        margin-right: $global-padding/3;
+        margin-right: calc($global-padding / 3);
       }
       &.postfix {
-        margin-left: $global-padding/3;
+        margin-left: calc($global-padding / 3);
       }
       svg,
       img {

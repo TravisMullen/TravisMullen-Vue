@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import { info } from '@/assets/metadata.json'
-import ArrowRightIcon from '@/assets/svg/caret-right.svg'
-import GithubIcon from '@/assets/svg/github.svg'
+import { info } from '../assets/metadata.json'
+import ArrowRightIcon from '../assets/svg/caret-right.svg?component'
+import GithubIcon from '../assets/svg/github.svg?component'
 
 export default {
   name: 'home',
@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../styles/_settings.scss';
 $animation-duration-default: 0.3s !default;
 .home-view {
 
@@ -56,7 +57,7 @@ $animation-duration-default: 0.3s !default;
     margin-top: $global-padding*2;
     margin-right: $global-padding*2;
 
-    transition: opacity $animation-duration-default/2 ease;
+    transition: opacity $animation-duration-default*0.5 ease;
     opacity: 0;
     .home & {
       opacity: 1;

@@ -1,33 +1,23 @@
 {
-  "name": "travis-mullen-brochure",
-  "version": "0.3.0",
+  "name": "travismullen-vue3",
   "private": true,
+  "version": "1.0.0",
+  "type":"module",
   "scripts": {
-    "postinstall": "node ./build/build.scss-namespace.js ./src/styles/_namespace.scss",
-    "preserve": "npm run lint --fix",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "foundation-sites": "^6.5.3",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.0.0",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vue-svg-loader": "^0.12.0"
+    "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-plugin-pwa": "^3.7.0",
-    "@vue/cli-service": "^4.5.11",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "sass": "^1.18.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "@vitejs/plugin-vue": "^2.2.0",
+    "foundation-sites": "^6.7.4",
+    "pug": "^3.0.2",
+    "sass": "^1.49.9",
+    "vite": "^2.8.0",
+    "vite-svg-loader": "^3.1.2",
+    "vue-router": "^4.0.12"
   }
 }
