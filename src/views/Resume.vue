@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import academic from '@/components/ResumeAcademic'
-import business from '@/components/ResumeBusiness'
+import academic from '../components/ResumeAcademic.vue'
+import business from '../components/ResumeBusiness.vue'
 
 export default {
   name: 'resume',

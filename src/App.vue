@@ -13,19 +13,24 @@
           ref='scroller'
         )
           .cell.auto.medium-10.large-8
-            transition(
-              name='slide-fade'
+            router-view(
+              v-slot="{ Component }"
             )
-              router-view
+              transition(
+                name='slide-fade'
+              )
+                component(
+                  :is="Component"
+                )
     .footer.cell.shrink.border-top
       page-footer
 </template>
 
 <script>
 
-import pageHeader from './components/Header'
-import pageFooter from './components/Footer'
-import Trigger from './components/Trigger'
+import pageHeader from './components/Header.vue'
+import pageFooter from './components/Footer.vue'
+import Trigger from './components/Trigger.vue'
 
 export default {
   name: 'app',
@@ -45,7 +50,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 // do NOT add `scoped` to this <style> !!
 // call `globals` to define the base styles globally
 @import 'styles/base';

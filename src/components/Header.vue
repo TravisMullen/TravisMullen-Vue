@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SwingHeadline from '@/components/SwingHeadline'
+import SwingHeadline from '../components/SwingHeadline.vue'
 export default {
   name: 'pageHeader',
   components: {
@@ -59,7 +59,7 @@ export default {
     @include breakpoint(large) {
       font-size: 3rem;
     }
-    padding: $global-padding/2 $global-padding/2;
+    padding: $global-padding*0.5 $global-padding*0.5;
   }
 }
 

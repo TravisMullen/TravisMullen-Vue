@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PiedPiperAlt from '@/assets/svg/pied-piper-alt.svg'
+import PiedPiperAlt from '../assets/svg/pied-piper-alt.svg?component'
 
 export default {
   name: 'notfound',
