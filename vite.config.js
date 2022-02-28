@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
+import sri from '@small-tech/vite-plugin-sri'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,6 +52,7 @@ export default defineConfig({
         sortAttrs: true,
         removeAttrs: { attrs: '(stroke|fill)' }
       }
-    })
+    }),
+    sri()
   ]
 })

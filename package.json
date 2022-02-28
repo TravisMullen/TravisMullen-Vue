@@ -2,7 +2,7 @@
   "name": "travismullen-vue3",
   "private": true,
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,6 +12,7 @@
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@small-tech/vite-plugin-sri": "^1.0.1",
     "@vitejs/plugin-vue": "^2.2.0",
     "foundation-sites": "^6.7.4",
     "pug": "^3.0.2",
